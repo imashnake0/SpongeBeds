@@ -73,3 +73,19 @@ looks for an activity to pass the intent to.
     </intent-filter>
 </activity>
 ```
+
+# Intents
+
+- `Intent`s are objects passed between activities (and other [app components](https://developer.android.com/guide/components/fundamentals#Components)).
+- There are two types of intents: Explicit and implicit. 
+  - **Explicit:** When the `intent` passed to `startActivity` has an explicit app component, the system 
+  immediately launches it.
+  - **Implicit:** When the `intent` object doesn't specify the explicit app component, the system
+  matches it against the intent filters declared by all apps on the device. If only one match
+  is found, the component is started with the `intent` passed to it. If multiple matches, 
+  a bottom sheet with options is shown.
+
+# Permissions
+
+- The manifest is also used to declare permissions that the app needs.
+- A parent activity cannot launch a child activity unless both have the same permissions.
