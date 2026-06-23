@@ -15,4 +15,4 @@ That's where I would play
 
 This is a play ground for studying Android stuff. 
 
-- [Activites](./app/src/main/java/com/imashnake/template/ui/activity/ACTIVITY.md)
+- [Activities](./app/src/main/java/com/imashnake/template/ui/activity/ACTIVITY.md)
