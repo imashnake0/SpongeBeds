@@ -2,7 +2,7 @@
 
 The [developer docs](https://developer.android.com/guide/components/activities/intro-activities) are a good starting point.
 
-# Introduction
+## Introduction
 
 - Activities serve as an entry point, kinda like `main()` in most other programming languages.
 This is because, on Android devices you sometimes want to enter certain parts of other apps,
@@ -20,7 +20,7 @@ activity can host one root composable that can navigate to other composables.
 
 _Reading: [The beautiful story of Android developers, multiple Activities, and the chained elephant](https://medium.com/swlh/the-beautiful-story-of-android-developers-multiple-activities-and-the-chained-elephant-2a3083a9cb19)._
 
-# Manifest
+## Manifest
 
 - The manifest file has app metadata that the system can access conveniently without having to parse
 the entire APK. The manifest is parsed and cached when the app is installed. See [`PackageInfo`](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/java/android/content/pm/PackageInfo.java).
@@ -40,7 +40,7 @@ the entire APK. The manifest is parsed and cached when the app is installed. See
 
 `name` is the only required attribute, see [other attributes](https://developer.android.com/guide/topics/manifest/activity-element).
 
-# Intent Filters
+## Intent Filters
 
 - Intent filters are elements that the system can look up when it needs to start an activity 
 via an explicit or implicit `Intent`.
