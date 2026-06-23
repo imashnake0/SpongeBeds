@@ -20,8 +20,8 @@ class SpongeActivity : ComponentActivity() {
         setContent {
             AndroidTemplateTheme {
                 Box(
-                    contentAlignment = Alignment.Companion.Center,
-                    modifier = Modifier.Companion
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
                         .background(MaterialTheme.colorScheme.background)
                         .fillMaxSize()
                 ) {
