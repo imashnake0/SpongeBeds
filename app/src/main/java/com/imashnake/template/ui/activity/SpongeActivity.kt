@@ -1,4 +1,4 @@
-package com.imashnake.template
+package com.imashnake.template.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,8 +20,8 @@ class SpongeActivity : ComponentActivity() {
         setContent {
             AndroidTemplateTheme {
                 Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
+                    contentAlignment = Alignment.Companion.Center,
+                    modifier = Modifier.Companion
                         .background(MaterialTheme.colorScheme.background)
                         .fillMaxSize()
                 ) {
