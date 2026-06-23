@@ -1,9 +1,16 @@
-# Android-Template
+# Sponge Beds
 
-Template repository for Android projects since the default project templates come with a lot of boilerplate and verbosity.
+![img.png](img.png)
 
-## Changes
+```markdown
+**NEMO**
+Dad, dad...can I go play too? Can I?
 
-### `.gitignore`
+**MARLIN**
+I would feel better if you go play over on the sponge beds
 
-See [Animite/.gitignore](https://github.com/imashnake0/Animite/blob/main/.gitignore).
+**MARLIN**
+That's where I would play
+```
+
+This is a play ground for studying Android stuff. 
