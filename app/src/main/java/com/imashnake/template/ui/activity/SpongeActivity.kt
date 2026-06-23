@@ -1,7 +1,9 @@
 package com.imashnake.template.ui.activity
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
@@ -16,7 +18,12 @@ import com.imashnake.template.ui.theme.AndroidTemplateTheme
 class SpongeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.auto(
+                Color.argb(0xe6, 0xFF, 0xFF, 0xFF),
+                Color.argb(0x80, 0x1b, 0x1b, 0x1b)
+            )
+        )
         setContent {
             AndroidTemplateTheme {
                 Box(
