@@ -74,7 +74,7 @@ looks for an activity to pass the intent to.
 </activity>
 ```
 
-# Intents
+## Intents
 
 - `Intent`s are objects passed between activities (and other [app components](https://developer.android.com/guide/components/fundamentals#Components)).
 - There are two types of intents: Explicit and implicit. 
@@ -85,7 +85,61 @@ looks for an activity to pass the intent to.
   is found, the component is started with the `intent` passed to it. If multiple matches, 
   a bottom sheet with options is shown.
 
-# Permissions
+## Permissions
 
 - The manifest is also used to declare permissions that the app needs.
 - A parent activity cannot launch a child activity unless both have the same permissions.
+
+## Lifecycle
+
+- As users interact with apps, activities transition through different [states](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:lifecycle/lifecycle-common/src/commonMain/kotlin/androidx/lifecycle/Lifecycle.kt;drc=35bb1f142088d509439c0c99dbeded3f3615616b;l=234).
+- `Activity` provides methods that are called when these transitions happen.
+
+![img.png](img.png)
+
+### onCreate
+
+- Fired on activity creation... the activity enters the `CREATED` state. 
+- Startup logic that happens only once.
+- `onCreate(savedInstanceState: Bundle?)` receives its previously saved state; if the
+activity never existed, the `savedInstanceState` is null.
+
+### onStart
+
+- This is called when the activity is visible to the user.
+- So it's called immediately after `onCreate` if the activity should be displayed.
+
+### onResume
+
+- Called when the activity is interactable.
+- The activity stays in this state until it's foregrounded, etc.
+
+### onPause
+
+- Called when the activity is partially hidden/unfocussed.
+- This does not mean destroyed: multi-window mode, interruptions, etc.
+
+### onStop
+
+- Called when the activity is no longer visible.
+- `onPause` should be used instead if you want UI work to continue.
+
+### onRestart
+
+- If the activity must be started after `onStop` is called this happens via `onRestart`.
+
+### onDestroy
+
+- Called when the activity transitions to the `DESTROYED` state.
+- Configuration changes and calling `finish()` trigger it.
+
+### Lifecycle Awareness
+
+![img_1.png](img_1.png)
+
+- Transitions in the lifecycle of a `LifecycleOwner` (Activities, etc.)
+can be observed by a lifecycle aware component.
+- Implement `DefaultLifecycleObserver` or `LifecycleEventObserver` and 
+override the methods as necessary.
+- [`LifecycleOwner`s](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:lifecycle/lifecycle-common/src/commonMain/kotlin/androidx/lifecycle/LifecycleOwner.kt;l=36;bpv=0;bpt=1?q=LifecycleOwner&ss=androidx%2Fplatform%2Fframeworks%2Fsupport)
+have a `lifecycle` and we can `addObserver`s to this lifecycle object.

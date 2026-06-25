@@ -30,6 +30,8 @@ class SpongeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        lifecycle.addObserver(Logger(this::class.java.simpleName))
+
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.auto(
                 Color.argb(0xe6, 0xFF, 0xFF, 0xFF),

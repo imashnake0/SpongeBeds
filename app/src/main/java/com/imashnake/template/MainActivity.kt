@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import com.imashnake.template.ui.activity.Logger
 import com.imashnake.template.ui.activity.SpongeActivity
 import com.imashnake.template.ui.theme.AndroidTemplateTheme
 
@@ -21,6 +22,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        lifecycle.addObserver(Logger(this::class.java.simpleName))
+
         setContent {
             val context = LocalContext.current
 
