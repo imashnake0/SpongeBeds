@@ -14,9 +14,11 @@
 
 > For an example of this, let's consider how an operating system defines "how to run an app."  In a classic system, this is basically the contract it has with an application about when it should run:
 
-> int main(...) {
-> // My app goes here!
+```
+int main(...) {
+// My app goes here!
 }
+```
 
 > So the operating system starts the app, calls its main() function, and the app goes off and runs and does what it wants until it decides it is done.  And clearly it is not saying anything here about what the app should be doing or how it should be designed within that main function -- it's a pretty pure blank slate.
 
